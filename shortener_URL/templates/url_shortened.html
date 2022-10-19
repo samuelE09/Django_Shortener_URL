@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% if short_url == 'No se encontró una URL Válida' %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>UPPS! Algo Ocurrió</strong> Por Favor debes Ingresar una URL Válida.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="container" style="width: 100vh;">
+    <div class="card card-body bg-dark text-center text-light">
+        <h3>URL Shortened</h3>
+        <hr>
+        <h1 class="display-6">{{ short_url }}</h1>
+    </div>
+</div>
+
+{% else %}
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>URL ACORTADA</strong> Tu URL ha sido acrotada satisfactoriamente.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="container">
+    <div class="card card-body bg-dark text-center text-light">
+        <h3>URL Shortened</h3>
+        <hr>
+        <h1 class="display-6">{{ short_url }}</h1>
+    </div>
+</div>
+
+{% endif %}
+    
+<div class="my-3 text-center">
+    <a class="btn bg-dark text-light" href="{% url 'home' %}" role="button">Volver Acortar URL</a>
+</div>
+
+
+
+{% endblock %}

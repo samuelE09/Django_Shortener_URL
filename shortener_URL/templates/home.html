@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="card m-4">
+    <h5 class="card-header text-center bg-dark text-light">ACORTADOR URL</h5>
+    <div class="card-body">
+      <h5 class="card-title">Ingresa tu URL</h5>
+      <form action="{% url 'url_shortened' %}">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Ingrese la URL a Acortar" name="long_url">
+            <label for="floatingInput">URL</label>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn bg-dark text-light">Acortar URL</button>
+        </div>
+    </form>
+    </div>
+</div>
+
+{% endblock %}
